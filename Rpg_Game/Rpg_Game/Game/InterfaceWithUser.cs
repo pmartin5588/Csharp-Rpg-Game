@@ -22,10 +22,12 @@ public class InterfaceWithUser
         }
     }
 
-    public string SelectCharacterName()
+    public string CharacterCreation()
     {
+        Console.WriteLine("Create a new character!");
         while (true)
         {
+            Console.Write("Name: ");
             var input = Console.ReadLine();
             if (String.IsNullOrEmpty(input))
             {

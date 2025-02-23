@@ -23,8 +23,6 @@ public class GameRunner
     
     private void StartGame()
     {
-        Console.WriteLine("Create a new character!");
-        Console.Write("Name: ");
-        _playerName = _interfaceWithUser.SelectCharacterName();
+        _playerName = _interfaceWithUser.CharacterCreation();
     }
 }
