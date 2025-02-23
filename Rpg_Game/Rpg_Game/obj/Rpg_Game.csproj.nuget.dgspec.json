@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pungormartin/Prog/C#-Projects/RPG_GAME/Rpg_Game/Rpg_Game/Rpg_Game.csproj": {}
+    "/Users/pungormartin/Prog/C#-Projects/RPG_GAME/Csharp-Rpg-Game/Rpg_Game/Rpg_Game/Rpg_Game.csproj": {}
   },
   "projects": {
-    "/Users/pungormartin/Prog/C#-Projects/RPG_GAME/Rpg_Game/Rpg_Game/Rpg_Game.csproj": {
+    "/Users/pungormartin/Prog/C#-Projects/RPG_GAME/Csharp-Rpg-Game/Rpg_Game/Rpg_Game/Rpg_Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pungormartin/Prog/C#-Projects/RPG_GAME/Rpg_Game/Rpg_Game/Rpg_Game.csproj",
+        "projectUniqueName": "/Users/pungormartin/Prog/C#-Projects/RPG_GAME/Csharp-Rpg-Game/Rpg_Game/Rpg_Game/Rpg_Game.csproj",
         "projectName": "Rpg_Game",
-        "projectPath": "/Users/pungormartin/Prog/C#-Projects/RPG_GAME/Rpg_Game/Rpg_Game/Rpg_Game.csproj",
+        "projectPath": "/Users/pungormartin/Prog/C#-Projects/RPG_GAME/Csharp-Rpg-Game/Rpg_Game/Rpg_Game/Rpg_Game.csproj",
         "packagesPath": "/Users/pungormartin/.nuget/packages/",
-        "outputPath": "/Users/pungormartin/Prog/C#-Projects/RPG_GAME/Rpg_Game/Rpg_Game/obj/",
+        "outputPath": "/Users/pungormartin/Prog/C#-Projects/RPG_GAME/Csharp-Rpg-Game/Rpg_Game/Rpg_Game/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/pungormartin/.nuget/NuGet/NuGet.Config"

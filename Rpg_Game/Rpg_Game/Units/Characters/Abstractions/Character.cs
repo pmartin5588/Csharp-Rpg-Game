@@ -1,31 +1,26 @@
-namespace Rpg_Game;
+using Rpg_Game.Units.Characters.Abstractions.Enums;
+
+namespace Rpg_Game.Units.Characters.Abstractions;
 
 public abstract class Character
 {
-    public int Health { get; private set; }
-    public int Mana { get; private set; }
     public string Name { get; }
     public Race Race { get; }
-    
+    public int Health { get; private set; }
+    public int Mana { get; private set; }
     public Attributes Attributes { get;  }
     public Equipment Equipment { get; }
 
-    public Character(string name, Race race, int health, int mana)
+    protected Character(string name, Race race)
     {
         Name = name;
         Race = race;
-        Health = health;
-        Mana = mana;
+        Health = Race == Race.Human ? 100 : 130;
+        Mana = Race == Race.Human ? 60 : 30;
         Equipment = new Equipment();
 
-        if (race == Race.Human)
-        {
-            Attributes = new Attributes(5,7,3);
-        }
-        else
-        {
-            Attributes = new Attributes(8, 3, 1);
-        }
-        
+        Attributes = Race == Race.Human 
+            ? new Attributes(5, 7, 3) 
+            : new Attributes(8, 3, 1);
     }
 }

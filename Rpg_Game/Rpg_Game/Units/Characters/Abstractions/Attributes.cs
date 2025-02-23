@@ -1,4 +1,4 @@
-namespace Rpg_Game;
+namespace Rpg_Game.Units.Characters.Abstractions;
 
 public class Attributes
 {

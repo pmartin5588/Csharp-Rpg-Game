@@ -1,4 +1,4 @@
-namespace Rpg_Game;
+namespace Rpg_Game.Units.Items.Abstractions.Enums;
 
 public enum ItemType
 {

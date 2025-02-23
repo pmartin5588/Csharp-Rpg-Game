@@ -1,4 +1,6 @@
-namespace Rpg_Game;
+using Rpg_Game.Units.Characters.Abstractions.Slot;
+
+namespace Rpg_Game.Units.Characters.Abstractions;
 
 public class Equipment
 {
@@ -12,5 +14,4 @@ public class Equipment
         ChestSlot = new ChestSlot();
         LegSlot = new LegSlot();
     }
-
 }

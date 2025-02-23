@@ -1,4 +1,7 @@
-namespace Rpg_Game;
+using Rpg_Game.Units.Characters.Abstractions;
+using Rpg_Game.Units.Items.Abstractions.Enums;
+
+namespace Rpg_Game.Units.Items.Abstractions.Item;
 
 public abstract class Item
 {
