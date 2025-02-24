@@ -10,6 +10,9 @@ public abstract class Character
     public int Mana { get; private set; }
     public Attributes Attributes { get;  }
     public Equipment Equipment { get; }
+    
+    public int TotalDamage { get;  set; }
+    public int TotalDefense { get;  set; }
 
     protected Character(string name, Race race)
     {
@@ -20,7 +23,12 @@ public abstract class Character
         Equipment = new Equipment();
 
         Attributes = Race == Race.Human 
-            ? new Attributes(5, 7, 3) 
-            : new Attributes(8, 3, 1);
+            ? new Attributes(5, 7, 3, 3) 
+            : new Attributes(8, 3, 1, 5);
+    }
+
+    public void TakeDamage(int damage, Hero hero)
+    {
+        Health = Health - (damage - hero.TotalDefense);
     }
 }

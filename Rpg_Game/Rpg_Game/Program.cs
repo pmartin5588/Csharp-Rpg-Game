@@ -2,6 +2,7 @@
 using Rpg_Game.Units.Characters;
 using Rpg_Game.Units.Characters.Abstractions.Enums;
 using Rpg_Game.Units.Items;
+using Rpg_Game.Units.Skills.Abstractions;
 
 namespace Rpg_Game;
 
@@ -19,7 +20,10 @@ class Program
         var enemy = new Enemy("Orc", Race.Orc);
         
         player.Equipment.ChestSlot.Equip(ironCuirass);
-        
-        
+        //player.Equipment.WeaponSlot.Equip(woodSword);
+
+
+        var attack = new Attack();
+        attack.CalculateDamage(player);
     }
 }
