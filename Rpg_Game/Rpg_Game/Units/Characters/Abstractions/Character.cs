@@ -11,8 +11,6 @@ public abstract class Character
     public Attributes Attributes { get;  }
     public Equipment Equipment { get; }
     
-    public int TotalDamage { get;  set; }
-    public int TotalDefense { get;  set; }
 
     protected Character(string name, Race race)
     {
@@ -27,8 +25,8 @@ public abstract class Character
             : new Attributes(8, 3, 1, 5);
     }
 
-    public void TakeDamage(int damage, Hero hero)
+    public void TakeDamage(int damage)
     {
-        Health = Health - (damage - hero.TotalDefense);
+        Health = Health - damage;
     }
 }

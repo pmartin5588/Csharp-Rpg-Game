@@ -29,3 +29,8 @@ public abstract class Item
         WeaponType = weaponType;
     }
 }
+
+public class Chest : Item
+{
+
+}

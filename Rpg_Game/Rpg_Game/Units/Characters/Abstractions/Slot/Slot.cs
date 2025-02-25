@@ -9,7 +9,7 @@ public abstract class Slot
     public Item Item { get; private set; } = new EmptyItem();
     protected ItemType RestrictedItemType { get; set; }
     
-    public void Equip(Item item)
+    protected void Equip(Item item)
     {
         if (item.ItemType == RestrictedItemType && item.ItemType != ItemType.Weapon)
         {
