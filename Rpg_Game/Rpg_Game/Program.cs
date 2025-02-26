@@ -2,6 +2,7 @@
 using Rpg_Game.Units.Characters;
 using Rpg_Game.Units.Characters.Abstractions.Enums;
 using Rpg_Game.Units.Items;
+using Rpg_Game.Units.Skills;
 
 namespace Rpg_Game;
 
@@ -13,6 +14,7 @@ class Program
         gameRunner.StartMenu();
         
         var woodSword = new WoodSword();
+        var woodBow = new WoodBow();
         var ironCuirass = new IronCuirass();
         var ironLeg = new IronLeg();
         var player = new Hero(gameRunner._playerName, Race.Human);
@@ -20,8 +22,8 @@ class Program
         
         player.Equipment.ChestSlot.Equip(ironCuirass);
         player.Equipment.WeaponSlot.Equip(woodSword);
-
-
-        
+        player.Equipment.WeaponSlot.Equip(woodBow);
+        var battle = new BattleActions();
+        battle.Attack(player, enemy);
     }
 }

@@ -1,11 +1,12 @@
-using Rpg_Game.Units.Items.Abstractions.Enums;
+using Rpg_Game.Units.Items.Abstractions.Item;
+using Rpg_Game.Units.Items.Abstractions.Item.Weapon;
 
 namespace Rpg_Game.Units.Characters.Abstractions.Slot;
 
 public class WeaponSlot : Slot
 {
-    public WeaponSlot()
+    public void Equip(Weapon weapon)
     {
-        RestrictedItemType = ItemType.Weapon;
+        base.Equip(weapon);
     }
 }
