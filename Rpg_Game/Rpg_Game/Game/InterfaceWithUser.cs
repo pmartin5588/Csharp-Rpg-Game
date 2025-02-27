@@ -29,6 +29,7 @@ public class InterfaceWithUser
         {
             Console.Write("Name: ");
             var input = Console.ReadLine();
+            Console.WriteLine("");
             if (String.IsNullOrEmpty(input))
             {
                 Console.WriteLine("Invalid input! Try again!");

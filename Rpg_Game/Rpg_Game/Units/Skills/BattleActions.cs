@@ -1,4 +1,5 @@
-﻿using Rpg_Game.Units.Characters;
+﻿using Rpg_Game.Units.Characters.Abstractions;
+using Rpg_Game.Units.Characters.Hero;
 using Rpg_Game.Units.Items;
 using Rpg_Game.Units.Items.Abstractions.Item;
 using Rpg_Game.Units.Items.Abstractions.Item.Weapon;
@@ -7,40 +8,44 @@ using Rpg_Game.Units.Skills.SkillSet.Abstractions;
 
 namespace Rpg_Game.Units.Skills
 {
-    internal class BattleActions
+    public class BattleActions
     {
-        private Magic[] magics;
+        public Magic[] Magics { get; }
+        private Character Character;
 
-        public BattleActions()
+        public BattleActions(Character character)
         {
-            magics =
+            Magics =
             [
-                new Fireball(),
-                new IceSpike()
+                new Fireball(character),
+                new IceSpike(character)
             ];
+
+            Character = character;
         }
 
 
-        public void Attack(Hero hero, Enemy enemy)
+        public void Attack(Character target)
         {
             var damage = 0;
-            switch (hero.Equipment.WeaponSlot.Item)
+            switch (Character.Equipment.WeaponSlot.Item)
             {
                 case Sword sword:
-                    damage = hero.Attributes.Strength + hero.Equipment.WeaponSlot.Item.Attributes.Strength;
+                    damage = Character.Attributes.Strength + Character.Equipment.WeaponSlot.Item.Attributes.Strength;
                     break;
                 case Staff staff:
-                    damage = hero.Attributes.Intelligence + hero.Equipment.WeaponSlot.Item.Attributes.Intelligence;
+                    damage = Character.Attributes.Intelligence + Character.Equipment.WeaponSlot.Item.Attributes.Intelligence;
                     break;
                 case Bow bow:
-                    damage = hero.Attributes.Agility + hero.Equipment.WeaponSlot.Item.Attributes.Agility;
+                    damage = Character.Attributes.Agility + Character.Equipment.WeaponSlot.Item.Attributes.Agility;
                     break;
                 default:
-                    damage = hero.Attributes.Strength;
+                    damage = Character.Attributes.Strength;
                     break;
             }
 
-            enemy.TakeDamage(damage);
+            Console.WriteLine($"{Character.Name} attacked {target.Name}.\r\n");
+            target.TakeDamage(damage);
         }
 
         public void Defense(Hero hero)
@@ -48,9 +53,5 @@ namespace Rpg_Game.Units.Skills
             
         }
 
-        public void UseMagic(Hero hero, Enemy enemy, Magic magic)
-        {
-            enemy.TakeDamage(magic.CalculateFinalDamage(hero));
-        }
     }
 }

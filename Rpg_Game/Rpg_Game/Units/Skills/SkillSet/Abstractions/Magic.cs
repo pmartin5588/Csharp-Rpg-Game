@@ -16,9 +16,20 @@ namespace Rpg_Game.Units.Skills.SkillSet.Abstractions
 
         public abstract int BaseDamage { get; }
 
-        public int CalculateFinalDamage(Character character)
+        private Character Character { get; }
+
+        protected Magic(Character character)
         {
-            return (int)(BaseDamage + character.Attributes.Intelligence * 0.1 + (character.Equipment.WeaponSlot.Item?.Attributes.Intelligence ?? 0) * 0.1);
+            Character = character;
+        }
+
+        public void Cast(Character target)
+        {
+            Character.TakeMana(Cost);
+
+            Console.WriteLine($"{Character.Name} used {Name} on {target.Name}.\r\n");
+
+            target.TakeDamage((int)(BaseDamage + Character.Attributes.Intelligence * 0.1 + (Character.Equipment.WeaponSlot.Item?.Attributes.Intelligence ?? 0) * 0.1));
         }
     }
 }

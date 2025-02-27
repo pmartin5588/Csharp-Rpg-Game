@@ -19,6 +19,7 @@ public class GameRunner
                 IsExiting = true;
                 break;
         }
+        Console.Clear();
     }
     
     private void StartGame()
