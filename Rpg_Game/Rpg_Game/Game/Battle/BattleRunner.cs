@@ -20,11 +20,13 @@ public class BattleRunner
 
     public void RunBattle()
     {
+        var battleFlag = 1;
+        
         Console.WriteLine("BATTLE BEGINS");
         Thread.Sleep(2000);
         Console.Clear();
 
-        while (Hero.Health > 0 && Enemy.Health > 0) 
+        while (battleFlag > 0) 
         {
             Console.WriteLine("");
             Console.WriteLine($"[{Hero.Name} HP: {Hero.Health}]");
@@ -38,6 +40,11 @@ public class BattleRunner
             Console.WriteLine("");
 
             ChooseBattleAction(Hero);
+            battleFlag = CheckHealth();
+            if (battleFlag == 0)
+            {
+                break;
+            }
             Thread.Sleep(5000);
             Console.Clear();
             Console.WriteLine("");
@@ -52,6 +59,11 @@ public class BattleRunner
             Console.WriteLine("");
 
             Enemy.Script.RandomActOnHero(Hero);
+            battleFlag = CheckHealth();
+            if (battleFlag == 0)
+            {
+                break;
+            }
             Thread.Sleep(5000);
             Console.Clear();
         }
@@ -96,6 +108,25 @@ public class BattleRunner
             default:
                 break;
         }
+    }
+
+    public int CheckHealth()
+    {
+        if (Hero.Health <= 0)
+        {
+            Console.Clear();
+            Console.WriteLine("You died.");
+            Thread.Sleep(5000);
+            return 0;
+        }
+        else if (Enemy.Health <= 0)
+        {
+            Console.Clear();
+            Console.WriteLine("You won.");
+            Thread.Sleep(5000);
+            return 0;
+        }
+        return 1;
     }
 
 }
