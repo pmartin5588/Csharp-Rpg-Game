@@ -16,8 +16,8 @@ namespace Rpg_Game.Units.Skills.SkillSet
 
         public override string Name { get; } = "Ice Spike";
 
-        public override int Cost { get; } = 5;
+        public override int Cost { get; } = 10;
 
-        public override int BaseDamage { get; } = 5;
+        public override int BaseDamage { get; } = 25;
     }
 }

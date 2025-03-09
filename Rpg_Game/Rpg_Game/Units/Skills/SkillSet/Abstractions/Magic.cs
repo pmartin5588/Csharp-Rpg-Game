@@ -29,7 +29,7 @@ namespace Rpg_Game.Units.Skills.SkillSet.Abstractions
 
             Console.WriteLine($"{Character.Name} used {Name} on {target.Name}.\r\n");
 
-            target.TakeDamage((int)(BaseDamage + Character.Attributes.Intelligence * 0.1 + (Character.Equipment.WeaponSlot.Item?.Attributes.Intelligence ?? 0) * 0.1));
+            target.TakeDamage((int)(BaseDamage + Character.Attributes.Intelligence * 0.5 + (Character.Equipment.WeaponSlot.Item?.Attributes.Intelligence ?? 0) * 0.5));
         }
     }
 }

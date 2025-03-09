@@ -20,12 +20,13 @@ class Program
         var woodBow = new WoodBow();
         var ironCuirass = new IronCuirass();
         var ironLeg = new IronLeg();
+        var magicStick = new MagicStick();
         var player = new Hero(gameRunner._playerName, Race.Human);
         var enemy = new Enemy("Orc", Race.Orc);
         
+        
         player.Equipment.ChestSlot.Equip(ironCuirass);
-        player.Equipment.WeaponSlot.Equip(woodSword);
-        player.Equipment.WeaponSlot.Equip(woodBow);
+        player.Equipment.WeaponSlot.Equip(magicStick);
 
         var battleRunner = new BattleRunner(player, enemy);
         battleRunner.RunBattle();

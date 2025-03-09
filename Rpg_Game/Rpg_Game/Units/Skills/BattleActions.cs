@@ -10,21 +10,48 @@ namespace Rpg_Game.Units.Skills
 {
     public class BattleActions
     {
+        public List<string> ListOfBattleActions = new List<string>();
         public Magic[] Magics { get; }
         private Character Character;
 
         public BattleActions(Character character)
         {
+            Character = character;
+            this.AddActionToList("Attack");
+            this.AddActionToList("Defend");
             Magics =
             [
                 new Fireball(character),
                 new IceSpike(character)
             ];
-
-            Character = character;
+            foreach (var magic in Magics)
+            {
+                this.AddActionToList(magic.Name);
+            }
+        }
+        
+        public void AddActionToList(string action)
+        {
+            if (ListOfBattleActions.Contains(action))
+            {
+                Console.WriteLine("Battle action is already added to list.");
+            }
+            ListOfBattleActions.Add(action);
         }
 
-
+        public void RemoveActionFromList(string action)
+        {
+            if (!ListOfBattleActions.Contains(action))
+            {
+                Console.WriteLine("Battle action is not added to list.");
+            }
+            else if (action == "Attack" || action == "Defense")
+            {
+                Console.WriteLine("Basic actions could not be removed.");
+            }
+            ListOfBattleActions.Remove(action);
+        }
+        
         public void Attack(Character target)
         {
             var damage = 0;

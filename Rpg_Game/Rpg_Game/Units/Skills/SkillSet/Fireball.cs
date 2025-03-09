@@ -13,11 +13,13 @@ namespace Rpg_Game.Units.Skills.SkillSet
         public Fireball(Character character) : base(character)
         {
         }
-
+        
         public override string Name { get; } = nameof(Fireball);
 
-        public override int Cost { get; } = 5;
+        public override int Cost { get; } = 8;
 
-        public override int BaseDamage { get; } = 5;
+        public override int BaseDamage { get; } = 20;
+        
+        
     }
 }

@@ -24,8 +24,8 @@ public abstract class Character
         Equipment = new Equipment();
         BattleActions = new BattleActions(this);
         Attributes = Race == Race.Human 
-            ? new Attributes(5, 7, 3, 3) 
-            : new Attributes(8, 3, 1, 5);
+            ? new Attributes(10, 6, 6, 7) 
+            : new Attributes(14, 4, 3, 5);
     }
 
     public void TakeDamage(int damage)
