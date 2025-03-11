@@ -1,5 +1,6 @@
 ﻿using Rpg_Game.Game;
 using Rpg_Game.Game.Battle;
+using Rpg_Game.Game.Map;
 using Rpg_Game.Units.Characters;
 using Rpg_Game.Units.Characters.Abstractions.Enums;
 using Rpg_Game.Units.Characters.Enemy;
@@ -13,6 +14,9 @@ class Program
 {
     static void Main(string[] args)
     {
+
+        Map map = new Map();
+
         GameRunner gameRunner = new GameRunner();
         gameRunner.StartMenu();
         

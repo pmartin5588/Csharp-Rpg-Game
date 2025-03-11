@@ -1,3 +1,4 @@
+using Rpg_Game.Game.Map;
 using Rpg_Game.Units.Characters.Abstractions.Enums;
 using Rpg_Game.Units.Skills;
 using static System.Net.Mime.MediaTypeNames;
@@ -14,6 +15,8 @@ public abstract class Character
     public Equipment Equipment { get; }
     
     public BattleActions BattleActions { get; }
+
+    public Coordinate Coordinate { get; set; }
 
     protected Character(string name, Race race)
     {
