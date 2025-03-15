@@ -52,5 +52,33 @@ namespace Rpg_Game.Game.Map
             hero.Coordinate = new Coordinate(5, 4);
             Layout[hero.Coordinate.Y, hero.Coordinate.X].Character = hero;
         }
+
+        public void printMap()
+        {
+            Console.Clear();
+
+            var xLength = Layout.GetLength(1);
+            var yLength = Layout.GetLength(0);
+
+            for(var y = 0; y < yLength; y++)
+            {
+                for(var x = 0;x < xLength; x++) 
+                {
+                    if(Layout[y,x].Character != null)
+                    {
+                        Console.Write("C");
+                    }
+                    else if(Layout[y, x] is Wall)
+                    {
+                        Console.Write("X");
+                    }
+                    else
+                    {
+                        Console.Write("#");
+                    }
+                }
+                Console.WriteLine("");
+            }
+        }
     }
 }

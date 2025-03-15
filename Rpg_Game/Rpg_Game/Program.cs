@@ -28,15 +28,7 @@ class Program
         player.Equipment.ChestSlot.Equip(ironCuirass);
         player.Equipment.WeaponSlot.Equip(magicStick);
 
-        player.MovementActions.RightStep();
-
-        player.MovementActions.DownStep();
-
-        player.MovementActions.LeftStep();
-
-        player.MovementActions.UpStep();
-
-        player.MovementActions.RightStep();
+        map.printMap();
 
         var battleRunner = new BattleRunner(player, enemy);
         battleRunner.RunBattle();
