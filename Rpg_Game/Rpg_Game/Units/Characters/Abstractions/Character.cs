@@ -15,10 +15,11 @@ public abstract class Character
     public Equipment Equipment { get; }
     
     public BattleActions BattleActions { get; }
+    public MovementActions MovementActions { get; }
 
     public Coordinate Coordinate { get; set; }
 
-    protected Character(string name, Race race)
+    protected Character(string name, Race race, Map map)
     {
         Name = name;
         Race = race;
@@ -26,6 +27,7 @@ public abstract class Character
         Mana = Race == Race.Human ? 60 : 30;
         Equipment = new Equipment();
         BattleActions = new BattleActions(this);
+        MovementActions = new MovementActions(map, this);
         Attributes = Race == Race.Human 
             ? new Attributes(10, 6, 6, 7) 
             : new Attributes(14, 4, 3, 5);

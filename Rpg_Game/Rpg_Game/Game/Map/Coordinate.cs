@@ -9,12 +9,12 @@ namespace Rpg_Game.Game.Map
     public struct Coordinate
     {
         public int X { get; }
-        public int Y {  get; }
+        public int Y { get; }
 
-        public Coordinate(int x, int y)
+        public Coordinate(int y, int x)
         {
-            X = x;
             Y = y;
+            X = x;
         }
     }
 }

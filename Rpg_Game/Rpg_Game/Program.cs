@@ -14,23 +14,29 @@ class Program
 {
     static void Main(string[] args)
     {
-
-        Map map = new Map();
-
         GameRunner gameRunner = new GameRunner();
         gameRunner.StartMenu();
-        
+        Map map = new Map();
         var woodSword = new WoodSword();
         var woodBow = new WoodBow();
         var ironCuirass = new IronCuirass();
         var ironLeg = new IronLeg();
         var magicStick = new MagicStick();
-        var player = new Hero(gameRunner._playerName, Race.Human);
-        var enemy = new Enemy("Orc", Race.Orc);
-        
-        
+        var player = new Hero(gameRunner._playerName, Race.Human, map);
+        var enemy = new Enemy("Orc", Race.Orc, map);
+
         player.Equipment.ChestSlot.Equip(ironCuirass);
         player.Equipment.WeaponSlot.Equip(magicStick);
+
+        player.MovementActions.RightStep();
+
+        player.MovementActions.DownStep();
+
+        player.MovementActions.LeftStep();
+
+        player.MovementActions.UpStep();
+
+        player.MovementActions.RightStep();
 
         var battleRunner = new BattleRunner(player, enemy);
         battleRunner.RunBattle();

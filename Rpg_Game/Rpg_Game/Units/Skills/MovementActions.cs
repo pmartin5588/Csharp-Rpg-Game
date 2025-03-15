@@ -13,23 +13,36 @@ namespace Rpg_Game.Units.Skills
         private Map Map { get; }
         private Character Character { get; }
 
-        public MovementActions(Map map)
+        public MovementActions(Map map, Character character)
         {
             Map = map;
+            Character = character;
         }
 
         public void UpStep()
         {
-            Map.Layout[Character.Coordinate.X, Character.Coordinate.Y].Character = null;
-            Map.Layout[Character.Coordinate.X, Character.Coordinate.Y - 1].Character = Character;
-            Character.Coordinate = Map.Layout[Character.Coordinate.X, Character.Coordinate.Y - 1].Coordinate;
+            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
+            Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X].Character = Character;
+            Character.Coordinate = Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X].Coordinate;
         }
         public void RightStep() 
         {
-
+            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
+            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X + 1].Character = Character;
+            Character.Coordinate = Map.Layout[Character.Coordinate.Y, Character.Coordinate.X + 1].Coordinate;
         }
-        public void DownStep() { }
-        public void LeftStep() { }
+        public void DownStep() 
+        {
+            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
+            Map.Layout[Character.Coordinate.Y + 1, Character.Coordinate.X].Character = Character;
+            Character.Coordinate = Map.Layout[Character.Coordinate.Y + 1, Character.Coordinate.X].Coordinate;
+        }
+        public void LeftStep() 
+        {
+            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
+            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X - 1].Character = Character;
+            Character.Coordinate = Map.Layout[Character.Coordinate.Y, Character.Coordinate.X - 1].Coordinate;
+        }
 
 
     }
