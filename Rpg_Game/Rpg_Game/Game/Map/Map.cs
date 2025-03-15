@@ -24,14 +24,14 @@ namespace Rpg_Game.Game.Map
             {
                 { W, W, W, W, W, W, W, W, W },
                 { W, O, O, O, O, O, O, O, W },
+                { W, O, O, O, O, W, W, W, W },
                 { W, O, O, O, O, O, O, O, W },
                 { W, O, O, O, O, O, O, O, W },
                 { W, O, O, O, O, O, O, O, W },
-                { W, O, O, O, O, O, O, O, W },
-                { W, O, O, O, O, O, O, O, W },
-                { W, O, O, O, O, O, O, O, W },
-                { W, O, O, O, O, O, O, O, W },
-                { W, O, O, O, O, O, O, O, W },
+                { W, W, W, W, O, O, O, O, W },
+                { W, O, O, W, O, O, O, O, W },
+                { W, O, O, W, O, O, O, O, W },
+                { W, O, O, W, O, O, O, O, W },
                 { W, O, O, O, O, W, W, O, W },
                 { W, O, O, O, O, W, O, O, W },
                 { W, O, O, O, O, W, O, O, W },
@@ -49,7 +49,7 @@ namespace Rpg_Game.Game.Map
 
         public void InitPlayerOnMap(Hero hero)
         {
-            hero.Coordinate = new Coordinate(5, 4);
+            hero.Coordinate = new Coordinate(1, 1);
             Layout[hero.Coordinate.Y, hero.Coordinate.X].Character = hero;
         }
 
@@ -66,15 +66,15 @@ namespace Rpg_Game.Game.Map
                 {
                     if(Layout[y,x].Character != null)
                     {
-                        Console.Write("C");
+                        Console.Write("@");
                     }
                     else if(Layout[y, x] is Wall)
                     {
-                        Console.Write("X");
+                        Console.Write("#");
                     }
                     else
                     {
-                        Console.Write("#");
+                        Console.Write(".");
                     }
                 }
                 Console.WriteLine("");

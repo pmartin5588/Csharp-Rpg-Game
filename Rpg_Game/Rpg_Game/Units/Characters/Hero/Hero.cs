@@ -10,4 +10,9 @@ public class Hero : Character
     {
         map.InitPlayerOnMap(this);
     }
+
+    public Hero (Race race, Map map) : base(race, map)
+    {
+        map.InitPlayerOnMap(this);
+    }
 }

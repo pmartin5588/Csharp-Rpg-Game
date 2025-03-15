@@ -1,4 +1,5 @@
 ﻿using Rpg_Game.Game.Map;
+using Rpg_Game.Game.Map.Tiles;
 using Rpg_Game.Units.Characters.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -21,27 +22,39 @@ namespace Rpg_Game.Units.Skills
 
         public void UpStep()
         {
-            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
-            Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X].Character = Character;
-            Character.Coordinate = Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X].Coordinate;
+            if(Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X] is not Wall)
+            {
+                Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
+                Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X].Character = Character;
+                Character.Coordinate = Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X].Coordinate;
+            }
         }
         public void RightStep() 
         {
-            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
-            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X + 1].Character = Character;
-            Character.Coordinate = Map.Layout[Character.Coordinate.Y, Character.Coordinate.X + 1].Coordinate;
+            if(Map.Layout[Character.Coordinate.Y, Character.Coordinate.X + 1] is not Wall)
+            {
+                Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
+                Map.Layout[Character.Coordinate.Y, Character.Coordinate.X + 1].Character = Character;
+                Character.Coordinate = Map.Layout[Character.Coordinate.Y, Character.Coordinate.X + 1].Coordinate;
+            }
         }
         public void DownStep() 
         {
-            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
-            Map.Layout[Character.Coordinate.Y + 1, Character.Coordinate.X].Character = Character;
-            Character.Coordinate = Map.Layout[Character.Coordinate.Y + 1, Character.Coordinate.X].Coordinate;
+            if (Map.Layout[Character.Coordinate.Y + 1, Character.Coordinate.X] is not Wall)
+            {
+                Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
+                Map.Layout[Character.Coordinate.Y + 1, Character.Coordinate.X].Character = Character;
+                Character.Coordinate = Map.Layout[Character.Coordinate.Y + 1, Character.Coordinate.X].Coordinate;
+            }
         }
         public void LeftStep() 
         {
-            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
-            Map.Layout[Character.Coordinate.Y, Character.Coordinate.X - 1].Character = Character;
-            Character.Coordinate = Map.Layout[Character.Coordinate.Y, Character.Coordinate.X - 1].Coordinate;
+            if (Map.Layout[Character.Coordinate.Y, Character.Coordinate.X - 1] is not Wall)
+            {
+                Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
+                Map.Layout[Character.Coordinate.Y, Character.Coordinate.X - 1].Character = Character;
+                Character.Coordinate = Map.Layout[Character.Coordinate.Y, Character.Coordinate.X - 1].Coordinate;
+            }
         }
 
 
