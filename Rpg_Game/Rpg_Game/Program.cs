@@ -16,8 +16,7 @@ class Program
     {
         Map map = new Map();
         var player = new Hero(Race.Human, map);
-        GameRunner gameRunner = new GameRunner(player, map);
-        gameRunner.StartMenu();
+
  
         var woodSword = new WoodSword();
         var woodBow = new WoodBow();
@@ -27,11 +26,10 @@ class Program
         var enemy = new Enemy("Orc", Race.Orc, map);
         player.Equipment.ChestSlot.Equip(ironCuirass);
         player.Equipment.WeaponSlot.Equip(magicStick);
-
-        map.printMap();
-
-        var battleRunner = new BattleRunner(player, enemy);
-        battleRunner.RunBattle();
+        
+        
+        GameRunner gameRunner = new GameRunner(player, map);
+        gameRunner.StartMenu();
 
     }
 }

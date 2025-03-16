@@ -9,6 +9,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Rpg_Game.Units.Characters.Enemy;
 
 namespace Rpg_Game.Game.Map
 {
@@ -53,7 +54,13 @@ namespace Rpg_Game.Game.Map
             Layout[hero.Coordinate.Y, hero.Coordinate.X].Character = hero;
         }
 
-        public void printMap()
+        public void PlaceEnemyOnMap(Enemy enemy)
+        {
+            enemy.Coordinate = new Coordinate(new Random().Next(2,Layout.GetLength(0)), new Random().Next(2,Layout.GetLength(1) - 1));
+            Layout[enemy.Coordinate.Y, enemy.Coordinate.X].Character = enemy;
+        }
+
+        public void PrintMap()
         {
             Console.Clear();
 
@@ -64,9 +71,13 @@ namespace Rpg_Game.Game.Map
             {
                 for(var x = 0;x < xLength; x++) 
                 {
-                    if(Layout[y,x].Character != null)
+                    if(Layout[y,x].Character != null && Layout[y,x].Character is Hero)
                     {
                         Console.Write("@");
+                    }
+                    else if (Layout[y,x].Character != null && Layout[y,x].Character is Enemy)
+                    {
+                        Console.Write("E");
                     }
                     else if(Layout[y, x] is Wall)
                     {

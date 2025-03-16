@@ -46,7 +46,7 @@ public class GameRunner
     {
         while (true)
         {
-            Map.printMap();
+            Map.PrintMap();
 
             ConsoleKeyInfo consoleKey = Console.ReadKey();
             switch (consoleKey.Key)

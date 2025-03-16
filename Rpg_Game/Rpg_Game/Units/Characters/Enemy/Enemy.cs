@@ -11,5 +11,6 @@ public class Enemy : Character
     public Enemy(string name, Race race, Map map) : base(name, race, map)
     {
         Script = new Script(this);
+        map.PlaceEnemyOnMap(this);
     }
 }
