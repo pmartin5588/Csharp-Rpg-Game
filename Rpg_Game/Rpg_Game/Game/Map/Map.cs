@@ -56,7 +56,7 @@ namespace Rpg_Game.Game.Map
 
         public void PlaceEnemyOnMap(Enemy enemy)
         {
-            enemy.Coordinate = new Coordinate(new Random().Next(2,Layout.GetLength(0)), new Random().Next(2,Layout.GetLength(1) - 1));
+            enemy.Coordinate = new Coordinate(new Random().Next(2,Layout.GetLength(0) - 1), new Random().Next(2,Layout.GetLength(1) - 1));
             Layout[enemy.Coordinate.Y, enemy.Coordinate.X].Character = enemy;
         }
 
