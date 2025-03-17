@@ -36,10 +36,10 @@ namespace Rpg_Game.Units.Skills
                      Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X].Character is Enemy)
             {
                 var battleRunner = new BattleRunner((Hero)Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character, (Enemy)Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X].Character);
-                battleRunner.RunBattle();
                 Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
                 Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X].Character = Character;
                 Character.Coordinate = Map.Layout[Character.Coordinate.Y - 1, Character.Coordinate.X].Coordinate;
+                battleRunner.RunBattle();
             }
         }
         public void RightStep() 
@@ -57,10 +57,10 @@ namespace Rpg_Game.Units.Skills
                 var battleRunner =
                     new BattleRunner((Hero)Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character,
                         (Enemy)Map.Layout[Character.Coordinate.Y, Character.Coordinate.X + 1].Character);
-                battleRunner.RunBattle();
                 Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
                 Map.Layout[Character.Coordinate.Y, Character.Coordinate.X + 1].Character = Character;
                 Character.Coordinate = Map.Layout[Character.Coordinate.Y, Character.Coordinate.X + 1].Coordinate;
+                battleRunner.RunBattle();
             }
         }
         public void DownStep() 
@@ -78,10 +78,10 @@ namespace Rpg_Game.Units.Skills
                 var battleRunner =
                     new BattleRunner((Hero)Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character,
                         (Enemy)Map.Layout[Character.Coordinate.Y + 1, Character.Coordinate.X].Character);
-                battleRunner.RunBattle();
                 Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
                 Map.Layout[Character.Coordinate.Y + 1, Character.Coordinate.X].Character = Character;
                 Character.Coordinate = Map.Layout[Character.Coordinate.Y + 1, Character.Coordinate.X].Coordinate;
+                battleRunner.RunBattle();
             }
         }
         public void LeftStep() 
@@ -99,10 +99,10 @@ namespace Rpg_Game.Units.Skills
                 var battleRunner =
                     new BattleRunner((Hero)Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character,
                         (Enemy)Map.Layout[Character.Coordinate.Y, Character.Coordinate.X - 1].Character);
-                battleRunner.RunBattle();
                 Map.Layout[Character.Coordinate.Y, Character.Coordinate.X].Character = null;
                 Map.Layout[Character.Coordinate.Y, Character.Coordinate.X - 1].Character = Character;
                 Character.Coordinate = Map.Layout[Character.Coordinate.Y, Character.Coordinate.X - 1].Coordinate;
+                battleRunner.RunBattle();
             }
         }
     }

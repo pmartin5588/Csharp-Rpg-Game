@@ -21,7 +21,6 @@ public class BattleRunner
     public void RunBattle()
     {
         var battleFlag = 1;
-        
         Console.WriteLine("BATTLE BEGINS");
         Thread.Sleep(2000);
         Console.Clear();
