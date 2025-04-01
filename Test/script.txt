@@ -1,0 +1,11 @@
+CREATE TABLE tTodo (
+    row_id SERIAL PRIMARY KEY,
+    task_id UUID NOT NULL DEFAULT gen_random_uuid(),
+    task TEXT,
+    description TEXT,
+    created_on TIMESTAMP,
+    expires_on TIMESTAMP,
+    CONSTRAINT uq_task_id UNIQUE (task_id)
+)
+
+CREATE INDEX idx_ttodo_task_id ON tTodo(task_id);
