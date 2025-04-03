@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webshop.Core", "Webshop.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webshop.Infrastructure", "Webshop.Infrastructure\Webshop.Infrastructure.csproj", "{007FFDE0-FEA6-43DF-8CFD-43CADD161F51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webshop.WebApi", "Webshop.WebApi\Webshop.WebApi.csproj", "{3F839245-C27E-4084-BCDC-1B08119E159A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webshop.Api", "Webshop.WebApi\Webshop.Api.csproj", "{3F839245-C27E-4084-BCDC-1B08119E159A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

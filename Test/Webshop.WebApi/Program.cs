@@ -1,10 +1,8 @@
-using System.Data;
 using Webshop.Core.Repositories;
 using Webshop.Core.Services;
-using Webshop.Infrastructure;
 using Webshop.Infrastructure.Repositories;
 
-namespace Webshop.WebApi
+namespace Webshop.Api
 {
     public class Program
     {
@@ -14,12 +12,15 @@ namespace Webshop.WebApi
 
             builder.Services.AddControllers();
 
-            builder.Services.AddScoped<IOrderService, OrderService>();
-            builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
-            builder.Services.AddScoped<IReceiptRepository, ReceiptRepository>();
-            builder.Services.AddScoped<IDbConnection, TestDbConnection>();
+            builder.Services.AddScoped<ITodoService, TodoService>();
+            builder.Services.AddScoped<ITodoRepository, TodoRepository>();
+
+            builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.MapControllers();
 
